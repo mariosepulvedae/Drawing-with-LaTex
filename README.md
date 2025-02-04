@@ -17,5 +17,4 @@ I'd appreciate if you cite this repository:
 }
 
 ```
-<object data="/images/sallenKey.pdf" type="application/pdf" width="100%"> 
-</object>
+[embed](https://github.com/mariosepulvedae/Drawing-with-LaTex/blob/main/images/sallenKey.pdf )[/embed]
