@@ -17,4 +17,5 @@ I'd appreciate if you cite this repository:
 }
 
 ```
-<image src="/images/sallenKey.pdf"/>
+<object data="/images/sallenKey.pdf" type="application/pdf" width="100%"> 
+</object>
