@@ -17,4 +17,7 @@ I'd appreciate if you cite this repository:
 }
 
 ```
-[embed](https://github.com/mariosepulvedae/Drawing-with-LaTex/blob/main/images/sallenKey.pdf )[/embed]
+![sallenKey](https://github.com/user-attachments/assets/7b6d541d-0402-43e1-b0fa-698bfdbc75cb)
+
+
+
