@@ -17,4 +17,4 @@ I'd appreciate if you cite this repository:
 }
 
 ```
-[sallenKey.pdf](https://github.com/user-attachments/files/18650752/sallenKey.pdf)
+<image src="/images/sallenKey.pdf"/>
