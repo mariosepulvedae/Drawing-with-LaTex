@@ -17,7 +17,8 @@ I'd appreciate if you cite this repository:
 }
 
 ```
-![sallenKey](https://github.com/user-attachments/assets/e3ac12bd-c444-4ce9-b58f-4c8375fa08fd)
+![sallenKey](https://github.com/user-attachments/assets/bd556b7f-fe68-4ebb-a462-2c4e65f3d1a5)
+
 
 
 
