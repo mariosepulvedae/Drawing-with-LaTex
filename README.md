@@ -15,9 +15,9 @@ I'd appreciate if you cite this repository:
     addendum = "(accessed: 2.2.2025)",
     keywords = "LaTeX,Electrical Design,CircuiTikZ"
 }
-![sallenKey](https://github.com/user-attachments/assets/e3ac12bd-c444-4ce9-b58f-4c8375fa08fd)
 
 ```
+![sallenKey](https://github.com/user-attachments/assets/e3ac12bd-c444-4ce9-b58f-4c8375fa08fd)
 
 
 
