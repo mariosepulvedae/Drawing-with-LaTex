@@ -1,0 +1,143 @@
+\documentclass[border=20pt]{standalone}%book, beamer
+%Inicia preámbulo
+
+%\include{tesis}
+
+
+%\usepackage{fourier}
+\usepackage{mathpazo}
+\usepackage{antpolt}
+
+% to change the fonts
+\usepackage{cancel}
+\usepackage{array}
+
+\usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+%\usepackage[numbers]{natbib}
+\usepackage[english]{babel}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\usepackage{xcolor}
+
+%\usepackage[margin=1.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsmath,amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{siunitx}
+%\usepackage[usenames]{color}
+\usepackage{multirow} % para las tablas
+%\usepackage[spanish,es-tabla]{babel}
+\usepackage{hieroglf}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+%\usepackage{slashbox}
+%\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{fontenc}
+\usepackage{tgbonum}
+
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+
+
+\usepackage{indentfirst}
+\usepackage{tabularray}
+
+\usepackage{lscape}
+
+\usepackage{listings}
+\usepackage{appendix}
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\usepackage{nameref}
+
+\usepackage{tikz}
+\usetikzlibrary{datavisualization.formats.functions} % LaTeX and plain TeX
+
+\usetikzlibrary[datavisualization]
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage[siunitx, RPvoltages,american resistor]{circuitikz}
+
+
+\usetikzlibrary {circuits.ee.IEC} 
+\newcommand*{\TickSize}{2pt}%
+
+\ctikzset{quadpoles/transformer core/height=3}
+\usepgfplotslibrary{fillbetween}
+\author{Mario Sepúlveda-Hernández }
+
+\title{Instrumentation amplifier}
+\begin{document}
+	
+	\begin{tikzpicture}[circuit ee IEC,scale=0.9]
+		\draw (0,0) node[op amp](opamp){};
+		\draw (0,9) node[op amp,yscale=-1](opamp2){};
+		\draw (opamp2.out) to [short,-*] ($(opamp2.out)+(1,0)$)
+		to [american resistor=$R_{3}$] ($(opamp2.out)+(1,-3)$)
+		to [short,-*] ($(opamp2.out)+(1,-3)$)
+		to [american resistor=$R_{G}$] ($(opamp2.out)+(1,-6)$)
+		to [short,-*] ($(opamp2.out)+(1,-6)$)
+		to [american resistor=$R_{3}$] ($(opamp2.out)+(1,-9)$);
+		\draw (opamp.out) to [short,-*] ($(opamp.out)+(1,0)$)
+		to [american resistor=$R_{1}$] ($(opamp.out)+(4,0)$)
+		to [short,-*] ($(opamp.out)+(4,0)$)
+		to [american resistor=$R_{2}$] ($(opamp.out)+(7,0)$);
+		\draw ($(opamp2.out)+(1,0)$) to [american resistor=$R_{1}$] ($(opamp2.out)+(4,0)$)
+		to [short,-*] ($(opamp2.out)+(4,0)$)
+		to [american resistor=$R_{2}$] ($(opamp2.out)+(7,0)$)
+		to [short] ($(opamp2.out)+(8.5,0)$)
+		to [short,-*] ($(opamp2.out)+(8.5,-4.5)$);
+		\draw (8,4.5) node[op amp](opamp3){};
+		\draw ($(opamp2.out)+(4,0)$) to [short] ($(opamp3.-)+(-1.355,0)$)
+		to [short] (opamp3.-);
+		\draw ($(opamp.out)+(4,0)$) to [short] ($(opamp3.+)+(-1.355,0)$)
+		to [short] (opamp3.+);
+		\draw (11,0) node[op amp,xscale=-1](opamp4){};
+		\draw (opamp4.out) to [short,-*] ($(opamp4.out)-(0.5,0)$)
+		to [short] ($(opamp4.out)-(1.5,0)$);
+		\draw ($(opamp4.out)-(0.5,0)$)  to [short] ($(opamp4.out)+(-0.5,2.4)$)
+		to [C={info=$C$}] ($(opamp4.out)+(3.15,2.4)$) 
+		to [short] ($(opamp4.out)+(3.15,0.5)$);
+		\draw (opamp4.-) to [short,-*] ($(opamp4.-)+(0.5,0)$)
+		to [american resistor=$R$] ($(opamp4.-)+(3,0)$)
+		to [short,-*] ($(opamp4.-)+(3,3.96)$);
+		\draw (opamp4.+) to [short] ($(opamp4.+)+(0.5,0)$)
+		to [short] ($(opamp4.+)+(0.5,-1)$)
+		node[tlground]{};
+		\draw (opamp3.out) to [short] ($(opamp3.out)+(5,0)$)
+		to [short,-o] ($(opamp3.out)+(7,0)$)
+		node[right]{$V_{out}$} ;
+		\draw (opamp2.+) to [short,-o] ($(opamp2.+)+(-2,0)$) node[left]{$v_{1}$};
+		\draw (opamp.+) to [short,-o] ($(opamp.+)+(-2,0)$) node[left]{$v_{2}$};
+		\draw (opamp.-) to [short] ($(opamp.-)+(-1,0)$)
+		to [short] ($(opamp.-)+(-1,2.455)$)
+		to [short] ($(opamp.out)+(1,3)$);
+		\draw (opamp2.-) to [short] ($(opamp2.-)+(-1,0)$)
+		to [short] ($(opamp2.-)+(-1,-2.455)$)
+		to [short] ($(opamp2.-)+(3.6,-2.455)$);
+		
+		\node[align=center,font=\bfseries, yshift=2em] (title) 
+		at (current bounding box.north)
+		{Intrumentation amplifier};
+		\node[align=flush left,yshift=-3em] at (current bounding box.south){$
+			\begin{aligned}
+				V_{out}&=\left(\dfrac{2R_{3}}{R_{G}}+1 \right)\left(\dfrac{R_{2}}{R_{1}}\right)\left(v_{2}-v_{1} \right)\\
+				f_{0}&=\dfrac{1}{2\pi RC}
+			\end{aligned}
+			$};
+	\end{tikzpicture} 
+\end{document}
